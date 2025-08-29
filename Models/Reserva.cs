@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Sistema_de_Hospedagem.Models
 {
     public class Reserva
@@ -11,11 +6,11 @@ namespace Sistema_de_Hospedagem.Models
         public Suite Suite { get; set; }
         public int DiasReservados { get; set; }
 
-        public Reserva() { }
-
-        public Reserva(int diasReservados)
+        public Reserva(int diasReservados, Suite suite, List<Pessoa> hospedes )
         {
             DiasReservados = diasReservados;
+            Suite = suite;
+            Hospedes = hospedes;
         }
 
         public void CadastrarHospedes(List<Pessoa> hospedes)
@@ -42,15 +37,14 @@ namespace Sistema_de_Hospedagem.Models
 
         public decimal CalcularValorDiaria()
         {
-            decimal valor = DiasReservados * Suite.ValorDiaria;            
+            decimal valor = DiasReservados * Suite.ValorDiaria;
 
-            if(DiasReservados >= 10)
+            if (DiasReservados >= 10)
             {
                 valor = valor * 0.90M;
             }
 
             return valor;
         }
-
     }
 }

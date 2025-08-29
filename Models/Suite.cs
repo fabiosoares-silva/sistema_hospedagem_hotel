@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Sistema_de_Hospedagem.Models
 {
     public class Suite
-    {
-        public Suite() { }
-
-        public Suite(string tipoSuite, int capacidade, decimal valorDiaria)
+    {       
+        public Suite(string tipoSuite, int capacidade, int valorDiaria) 
         {
             TipoSuite = tipoSuite;
             Capacidade = capacidade;
