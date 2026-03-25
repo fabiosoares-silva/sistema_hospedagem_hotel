@@ -1,4 +1,5 @@
 ﻿using Sistema_de_Hospedagem.Models;
+using Sistema_de_Hospedagem.Services;
 
 List<Pessoa> hospedes = [];
 
@@ -47,12 +48,7 @@ Reserva reserva = new(diasReservados, suite, hospedes);
 reserva.CadastrarSuite(suite);
 reserva.CadastrarHospedes(hospedes);
 
-Console.WriteLine("Resumo Cadastral\n");
-Console.WriteLine($"Hóspedes: {reserva.ObterQuantidadeHospedes()}");
-Console.WriteLine($"Suíte: {tipoSuite}");
-Console.WriteLine($"Dias reservados: {diasReservados}");
-Console.WriteLine($"Total de pessoas hospedadas: {capacidade}");
-Console.WriteLine($"valor diária: {reserva.CalcularValorDiaria()}");
+RelatorioService.ExibirResumoDaHospedagem(novoHospede, reserva, tipoSuite);
 
 Console.WriteLine("\nPressione qualquer tecla para sair.");
 Console.ReadKey();
