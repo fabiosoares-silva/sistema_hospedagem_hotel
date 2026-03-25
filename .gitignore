@@ -1,0 +1,13 @@
+﻿# Arquivos de compilação do .NET
+[Bb]in/
+[Oo]bj/
+
+# Configurações do Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Arquivos de log e temporários
+*.log
