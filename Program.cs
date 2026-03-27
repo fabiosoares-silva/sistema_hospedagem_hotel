@@ -1,54 +1,21 @@
 ﻿using Sistema_de_Hospedagem.Models;
 using Sistema_de_Hospedagem.Services;
+using System.Text;
 
-List<Pessoa> hospedes = [];
+Console.OutputEncoding = Encoding.UTF8;
 
-Console.WriteLine("Bem-vindo(a) ao Sistema de Hospedagem!");
-Thread.Sleep(3000);
-Console.Clear();    
+List<Pessoa> hospedes = new List<Pessoa>();
 
-Console.WriteLine("Digite o nome do hospede principal: ");
-string nomeHospede = Console.ReadLine()!;
+Pessoa p1 = new(nome: "Hóspede 1");
+Pessoa p2 = new(nome: "Hóspede 2");
 
-Console.Clear();
+hospedes.Add(p1);
+hospedes.Add(p2);
 
-Console.WriteLine("Digite o sobrenome do hospede principal: ");
-string sobrenomeHospede = Console.ReadLine()!;
+Suite suite = new Suite(tipoSuite: "Premium", capacidade: 2, valorDiaria: 30);
 
-Console.Clear();
-
-Console.WriteLine("Digite o tipo da suíte (Basic, Standard ou Luxo): ");
-string tipoSuite = Console.ReadLine()!;
-
-Console.Clear();
-
-Console.WriteLine("Digite a quantas pessoas vão se hospedar: ");
-int capacidade = int.Parse(Console.ReadLine()!);
-
-Console.Clear();
-
-Console.WriteLine("Digite quantos dias ficará hospedado: ");
-int diasReservados = int.Parse(Console.ReadLine()!);
-
-Console.Clear();
-
-Console.WriteLine("Digite o valor da diária: ");
-int valorDiaria = int.Parse(Console.ReadLine()!);
-
-Console.Clear();
-
-Pessoa novoHospede = new(nomeHospede, sobrenomeHospede);
-
-hospedes.Add(novoHospede);
-
-Suite suite = new(tipoSuite, capacidade, valorDiaria);
-
-Reserva reserva = new(diasReservados, suite, hospedes);
-
+Reserva reserva = new(diasReservados: 5);
 reserva.CadastrarSuite(suite);
 reserva.CadastrarHospedes(hospedes);
 
-RelatorioService.ExibirResumoDaHospedagem(novoHospede, reserva, tipoSuite);
-
-Console.WriteLine("\nPressione qualquer tecla para sair.");
-Console.ReadKey();
+RelatorioService.ExibirResumoDaHospedagem(p1, reserva, suite);
