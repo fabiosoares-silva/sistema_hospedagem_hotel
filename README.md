@@ -20,16 +20,17 @@ com aplicação automática de desconto.
 ## Tecnologias
 
 - C# / .NET 8
-- Orientação a objetos
-- Separação de responsabilidades (Models e Services)
+- Programação Orientada a Objetos: Uso de classes, construtores e encapsulamento.
+- Lógica de Negócio: Validação de regras de ocupação e cálculos condicionais.
+- Separação de Responsabilidades: Organização estruturada entre modelos de dados e serviços.
 
 ## Como executar
 ```bash
 # Clone o repositório
-git clone https://github.com/fabiosoares-silva/sistema_hospedagem_hotel
+git clone https://github.com/fabiosoares-silva/sistema-hospedagem-hotel.git
 
 # Entre na pasta do projeto
-cd sistema_hospedagem_hotel
+cd sistema-hospedagem-hotel
 
 # Execute
 dotnet run
